@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cardápio jquery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="styleEx08.css">
+  <script>
+        $(document).ready(function(){
+            $("button").click(function(){ 
+                var s = $("#mySelected option:selected");              
+                var sum = 0;
+                var total;                
+                var n = $( "input:checked" ).length;
+                    for (var i = 0; i < n; i++){
+                        var aux = $( "input:checked").get(i).value;
+                        sum = sum + parseFloat(aux);
+                    }
+                total = sum - (s.val())/100 * sum; 
+
+                //convertendo total para moeda
+                var moeda = total.toLocaleString("pt-BR", { style: "currency" , currency:"BRL"});               
+                
+                $("#resp").text(moeda);              
+                alert (t);
+            });
+        });
+        </script>
+</head>
+<body>
+    <div class="conteiner">
+        <h1>Entradas</h1>
+
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                BATATA FRITA
+                <span>
+                    R$10,00
+                    <input type="checkbox" id="ent01" value="10.00">                
+                </span> 
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                PURÊ DE BATATA
+                <span>
+                    R$20,00
+                    <input type="checkbox" id="ent02" value="20.00">                
+                </span>                
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                BATATA FRITA COM QUEIJO
+                <span>
+                    R$30,00 
+                    <input type="checkbox" id="ent03" value="30.00">                
+                </span> 
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                BOLINHOS DE SALMÃ
+                <span>
+                    R$40,00 
+                    <input type="checkbox" id="ent04" value="40.00">                
+                </span> 
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                CAMARÃO EMPANADO
+                <span>
+                    R$50,00
+                    <input type="checkbox" id="ent05" value="50.00">                
+                </span> 
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                CAMARÃO A MILANESA
+                <span>
+                    R$60,00
+                    <input type="checkbox" id="ent06" value="60.00">                
+                </span> 
+            </li>
+          </ul> 
+          
+          <h1>Pratos</h1>
+
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                SALMÃO COM ARROZ
+                <span>
+                    R$10,00
+                    <input type="checkbox" id="prat01" value="10.00">                
+                </span> 
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                CARNE, FRANGO E BATATA
+                <span>
+                    R$20,00
+                    <input type="checkbox" id="prat02" value="20.00">                
+                </span>                
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                CARNE COM BRÓCOLIS
+                <span>
+                    R$30,00 
+                    <input type="checkbox" id="prat03" value="30.00">                
+                </span> 
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                FRANGO XADREZ
+                <span>
+                    R$40,00 
+                    <input type="checkbox" id="prat04" value="40.00">                
+                </span> 
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                YAKISOBA
+                <span>
+                    R$50,00
+                    <input type="checkbox" id="prat05" value="50.00">                
+                </span> 
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                PEIXE FRITO
+                <span>
+                    R$60,00
+                    <input type="checkbox" id="prat06" value="60.00">                
+                </span> 
+            </li>
+          </ul> 
+
+          <h1>Sobremesas</h1>
+
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                ROLINHO DE BANANA COM CHOCOLATE
+                <span>
+                    R$10,00
+                    <input type="checkbox" id="sob01" value="10.00">                
+                </span> 
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                ROLINHO ROMEU E JULIETA
+                <span>
+                    R$20,00
+                    <input type="checkbox" id="sob02" value="20.00">                
+                </span>                
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                BANANA CARAMELADA
+                <span>
+                    R$30,00 
+                    <input type="checkbox" id="sob03" value="30.00">                
+                </span> 
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                ABACAXI CARAMELADO
+                <span>
+                    R$40,00 
+                    <input type="checkbox" id="sob04" value="40.00">                
+                </span> 
+            </li>
+        </ul> 
+
+        <br><br>
+        <select class="custom-select custom-select-lg mb-3" id="mySelected">
+            <option value="0">Selecione o convênio</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+        </select>
+        
+        <br><br>
+        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal" id="btnCalcular">Calcular</button>
+
+                <!-- The Modal -->
+        <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                    <h4 class="modal-title">Total a Pagar:</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                    <p id="resp"></p>                   
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                    
+                </div>
+                </div>
+            </div>
+
+    </div>
+</body>
+
+</html>
